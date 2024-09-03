@@ -65,7 +65,9 @@
         button.addEventListener('click', () => {
             const selectedSheetUrl = dropdown.value;
             if (selectedSheetUrl) {
-                window.location.href = selectedSheetUrl;
+                // Remove the query string from the URL
+                const actualSheetUrl = selectedSheetUrl.split('?')[0];
+                window.location.href = actualSheetUrl;
             }
         });
     </script>
