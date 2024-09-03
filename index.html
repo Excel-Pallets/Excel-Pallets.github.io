@@ -16,7 +16,7 @@
 <body>
     <select id="excelDropdown">
         <option value="">Select an Excely workbook:</option>
-
+        
         <option value="https://netorg4218172-my.sharepoint.com/:x:/g/personal/jack_nugent_wvtech_com_au/EdLJED75BjZLkg_B3fqPENMBX0Jnnt-9dzyLrR3Eb6XTuw?action=embedview&wdbipreview=true">Laptop</option>
 
 
@@ -44,8 +44,9 @@
 
         
     </select>
-    <iframe id="embeddedExcel" src="" frameborder="0"></iframe>
     <a id="navigateButton" class="button" href="#">Go to Sheet</a>
+    <iframe id="embeddedExcel" src="" frameborder="0"></iframe>
+    
     <script>
         const dropdown = document.getElementById('excelDropdown');
         const iframe = document.getElementById('embeddedExcel');
@@ -57,6 +58,14 @@
                 iframe.src = selectedValue;
             } else {
                 iframe.src = ''; // Clear the iframe if no option is selected
+            }
+        });
+
+        // Add event listener for the "Go to Sheet" button
+        button.addEventListener('click', () => {
+            const selectedSheetUrl = dropdown.value;
+            if (selectedSheetUrl) {
+                window.location.href = selectedSheetUrl;
             }
         });
     </script>
