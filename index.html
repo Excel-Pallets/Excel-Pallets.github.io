@@ -63,9 +63,21 @@
 
         // Add event listener for the "Go to Sheet" button
         button.addEventListener('click', () => {
-            const selectedSheetUrl = dropdown.value;
-            if (selectedSheetUrl) {
-                window.location.href = selectedSheetUrl - ?action=embedview&wdbipreview=true;
+            // Assuming selectedSheetUrl contains the URL with query parameters
+const selectedSheetUrl = dropdown.value;
+
+// Create a URL object
+const urlObj = new URL(selectedSheetUrl);
+
+// Clear the search (query string) part
+urlObj.search = '';
+
+// Get the cleaned URL
+const cleanedUrl = urlObj.toString();
+
+// Now you can use the cleanedUrl as needed
+window.location.href = cleanedUrl;
+
             }
         });
     </script>
