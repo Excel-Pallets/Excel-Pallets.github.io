@@ -60,26 +60,14 @@
                 iframe.src = ''; // Clear the iframe if no option is selected
             }
         });
-
-        // Add event listener for the "Go to Sheet" button
         button.addEventListener('click', () => {
-            // Assuming selectedSheetUrl contains the URL with query parameters
-const selectedSheetUrl = dropdown.value;
+    const selectedSheetUrl = dropdown.value;
+    const urlObj = new URL(selectedSheetUrl);
+    urlObj.search = '';
+    const cleanedUrl = urlObj.toString();
+    window.location.href = cleanedUrl;
+});
 
-// Create a URL object
-const urlObj = new URL(selectedSheetUrl);
-
-// Clear the search (query string) part
-urlObj.search = '';
-
-// Get the cleaned URL
-const cleanedUrl = urlObj.toString();
-
-// Now you can use the cleanedUrl as needed
-window.location.href = cleanedUrl;
-
-            }
-        });
     </script>
 </body>
 </html>
