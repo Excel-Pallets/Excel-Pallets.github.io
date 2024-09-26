@@ -85,7 +85,7 @@
     const urlObj = new URL(selectedSheetUrl);
     urlObj.search = '';
     const cleanedUrl = urlObj.toString();
-    window.location.href = cleanedUrl;
+    window.open(cleanedUrl, '_blank');
 });
 
     </script>
