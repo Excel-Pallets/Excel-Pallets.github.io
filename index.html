@@ -71,13 +71,17 @@
         const button = document.getElementById('navigateButton');
 
         dropdown.addEventListener('change', () => {
-            const selectedValue = dropdown.value;
-            if (selectedValue) {
-                iframe.src = selectedValue;
-            } else {
-                iframe.src = ''; // Clear the iframe if no option is selected
-            }
-        });
+        const selectedValue = dropdown.value;
+        if (selectedValue) {
+            iframe.src = selectedValue;
+            button.style.display = 'none'; // Hide the button
+            setTimeout(() => {
+                button.style.display = 'inline-block'; // Show the button after 5 seconds
+            }, 5000); // Set the time in milliseconds (5000ms = 5 seconds)
+        } else {
+            iframe.src = ''; // Clear the iframe if no option is selected
+        }
+    });
 </script>
 <script>
         button.addEventListener('click', () => {
