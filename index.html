@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Points Excel Workbook</title>
+    <title>Embedded Excel Workbook</title>
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 1000px;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px; /* Adjust height as needed */
+            background-color: white; /* Match the background color */
+        }
+    </style>
 </head>
 <body>
-    <h1>Embedded Points Excel Workbook - Points Sheet</h1>
-    <iframe src="https://netorg4218172-my.sharepoint.com/:x:/g/personal/jack_nugent_wvtech_com_au/EXCUgp6gAyJOkqvZc1sGELMBRJvQoxuoqoT_Xr3njmM0VQ?e=uwRDGi&nav=MTVfezQ1NUU1NDkyLTZBQTQtNDQ1Qi05MTc0LTcyMzZGQjAyMUY4NH0&action=embedview&wdbipreview=true&wdHideSheetTabs=true" width="100%" height="1000px"></iframe>
+    <h1>Embedded Excel Workbook - Points Sheet</h1>
+    <div class="iframe-container">
+        <iframe src="https://netorg4218172-my.sharepoint.com/:x:/g/personal/jack_nugent_wvtech_com_au/EXCUgp6gAyJOkqvZc1sGELMBRJvQoxuoqoT_Xr3njmM0VQ?e=uwRDGi&nav=MTVfezQ1NUU1NDkyLTZBQTQtNDQ1Qi05MTc0LTcyMzZGQjAyMUY4NH0&action=embedview&wdbipreview=true&wdHideSheetTabs=true"></iframe>
+        <div class="overlay"></div>
+    </div>
 </body>
 </html>
