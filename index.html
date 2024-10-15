@@ -27,22 +27,12 @@
     <script>
         function addCacheBuster() {
             const iframe = document.getElementById('excelIframe');
-            const baseUrl = "https://netorg4218172-my.sharepoint.com/:x:/g/personal/jack_nugent_wvtech_com_au/EXCUgp6gAyJOkqvZc1sGELMBiuJ-OVOFOoJiYy1QmcKcsg?e=bYmew3&nav=MTVfezQ1NUU1NDkyLTZBQTQtNDQ1Qi05MTc0LTcyMzZGQjAyMUY4NH0&action=embedview&wdbipreview=true&wdHideSheetTabs=true";
+            const baseUrl = "https://netorg4218172-my.sharepoint.com/:x:/g/personal/jack_nugent_wvtech_com_au/EXCUgp6gAyJOkqvZc1sGELMBiuJ-OVOFOoJiYy1QmcKcsg?e=bYmew3&nav=MTVfezQ1NUU1NDkyLTZBQTQtNDQ1Qi05MTc0LTcyMzZGQjAyMUY4NH0&action=embedview&wdbipreview=true&wdHideSheetTabs=true&activeCell=Points!A1";
             const cacheBuster = `cachebuster=${new Date().getTime()}`;
             iframe.src = `${baseUrl}&${cacheBuster}`;
         }
 
-        function scrollToColumnA() {
-            const iframe = document.getElementById('excelIframe');
-            iframe.onload = function() {
-                iframe.contentWindow.scrollTo(0, 0); // Adjust the scroll position as needed
-            };
-        }
-
-        window.onload = function() {
-            addCacheBuster();
-            scrollToColumnA();
-        };
+        window.onload = addCacheBuster;
     </script>
 </head>
 <body>
